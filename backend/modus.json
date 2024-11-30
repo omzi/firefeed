@@ -1,0 +1,30 @@
+{
+  "$schema": "https://schema.hypermode.com/modus.json",
+  "endpoints": {
+    "default": {
+      "type": "graphql",
+      "path": "/graphql",
+      "auth": "bearer-token"
+    }
+  },
+  "connections": {
+    "database": {
+      "type": "postgresql",
+      "connString": "postgresql://{{PG_USER}}:{{PG_PASSWORD}}@ep-sweet-bush-a2l2x8um.eu-central-1.aws.neon.tech/FireFeed?sslmode=require"
+    },
+    "openai": {
+      "type": "http",
+      "baseUrl": "https://api.openai.com/",
+      "headers": {
+        "Authorization": "Bearer {{API_KEY}}"
+      }
+    }
+  },
+  "models": {
+    "llm": {
+      "sourceModel": "gpt-4o-mini",
+      "connection": "openai",
+      "path": "v1/chat/completions"
+    }
+  }
+}
