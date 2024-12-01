@@ -16,6 +16,8 @@ document.addEventListener('DOMContentLoaded', () => {
         const response = await fetch(`${appUrl}/api/organization/${firefeedId}`);
         const { data: organization } = await response.json();
 
+        const widgetStyle = JSON.parse(`{${organization.widgetStyle}}`);
+
         const css = document.createElement('link');
         css.href = `${url}/widget.css`;
         css.type = 'text/css';
@@ -26,10 +28,8 @@ document.addEventListener('DOMContentLoaded', () => {
         document.body.insertAdjacentHTML(
           'beforeend',
           `
-            <a id='firefeed-button-open' 
-               class='firefeed-toggle-feedback firefeed-button-open-${organization?.widgetStyle?.buttonPosition}' 
-               style='background: ${organization?.widgetStyle?.buttonBackground}; color: ${organization?.widgetStyle?.buttonColour}'>
-               ${organization?.widgetStyle?.buttonText}
+            <a id='firefeed-button-open' class='firefeed-toggle-feedback firefeed-button-open-${widgetStyle?.buttonPosition}' style='background: ${widgetStyle?.buttonBackground}; color: ${widgetStyle?.buttonColour}'>
+              ${widgetStyle?.buttonText}
             </a>
 
             <div id='firefeed-frame' class='firefeed-frame-closed' style='display:none;'>
