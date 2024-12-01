@@ -55,7 +55,8 @@ export const linkAccount = async (
 		{ query, variables },
 		{
 			headers: {
-				'Content-Type': 'application/json'
+				'Content-Type': 'application/json',
+				Authorization: `Bearer ${process.env.MODUS_TOKEN}`
 			}
 		}
 	);
@@ -89,7 +90,8 @@ export const createUser = async (
 		{ query, variables },
 		{
 			headers: {
-				'Content-Type': 'application/json'
+				'Content-Type': 'application/json',
+				Authorization: `Bearer ${process.env.MODUS_TOKEN}`
 			}
 		}
 	);
@@ -121,7 +123,8 @@ export const updateUser = async (
 		{ query, variables },
 		{
 			headers: {
-				'Content-Type': 'application/json'
+				'Content-Type': 'application/json',
+				Authorization: `Bearer ${process.env.MODUS_TOKEN}`
 			}
 		}
 	);
@@ -148,7 +151,8 @@ export const createOrganization = async (
 		{ query, variables },
 		{
 			headers: {
-				'Content-Type': 'application/json'
+				'Content-Type': 'application/json',
+				Authorization: `Bearer ${process.env.MODUS_TOKEN}`
 			}
 		}
 	);
@@ -177,7 +181,8 @@ export const updateOrganization = async (
     { query, variables },
     {
       headers: {
-        'Content-Type': 'application/json'
+        'Content-Type': 'application/json',
+				Authorization: `Bearer ${process.env.MODUS_TOKEN}`
       }
     }
   );
@@ -203,7 +208,8 @@ export const createMembership = async (
 		{ query, variables },
 		{
 			headers: {
-				'Content-Type': 'application/json'
+				'Content-Type': 'application/json',
+				Authorization: `Bearer ${process.env.MODUS_TOKEN}`
 			}
 		}
 	);
@@ -228,7 +234,8 @@ export const generateVerificationCode = async (
 		{ query, variables },
 		{
 			headers: {
-				'Content-Type': 'application/json'
+				'Content-Type': 'application/json',
+				Authorization: `Bearer ${process.env.MODUS_TOKEN}`
 			}
 		}
 	);
@@ -255,7 +262,8 @@ export const generatePasswordResetToken = async (
 		{ query, variables },
 		{
 			headers: {
-				'Content-Type': 'application/json'
+				'Content-Type': 'application/json',
+				Authorization: `Bearer ${process.env.MODUS_TOKEN}`
 			}
 		}
 	);
@@ -275,7 +283,8 @@ export const deleteVerificationCode = async (
 		{ query, variables },
 		{
 			headers: {
-				'Content-Type': 'application/json'
+				'Content-Type': 'application/json',
+				Authorization: `Bearer ${process.env.MODUS_TOKEN}`
 			}
 		}
 	);
@@ -305,7 +314,8 @@ export const createFeedback = async (
 		{ query, variables },
 		{
 			headers: {
-				'Content-Type': 'application/json'
+				'Content-Type': 'application/json',
+				Authorization: `Bearer ${process.env.MODUS_TOKEN}`
 			}
 		}
 	);
@@ -325,7 +335,8 @@ export const deletePasswordResetToken = async (
 		{ query, variables },
 		{
 			headers: {
-				'Content-Type': 'application/json'
+				'Content-Type': 'application/json',
+				Authorization: `Bearer ${process.env.MODUS_TOKEN}`
 			}
 		}
 	);

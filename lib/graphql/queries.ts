@@ -56,7 +56,8 @@ export const getUser = async (
 		{ query, variables },
 		{
 			headers: {
-				'Content-Type': 'application/json'
+				'Content-Type': 'application/json',
+				Authorization: `Bearer ${process.env.MODUS_TOKEN}`
 			}
 		}
 	);
@@ -96,7 +97,8 @@ export const getUserByAccount = async (
 		{ query, variables },
 		{
 			headers: {
-				'Content-Type': 'application/json'
+				'Content-Type': 'application/json',
+				Authorization: `Bearer ${process.env.MODUS_TOKEN}`
 			}
 		}
 	);
@@ -135,7 +137,8 @@ export const getUserByEmail = async (
 		{ query, variables },
 		{
 			headers: {
-				'Content-Type': 'application/json'
+				'Content-Type': 'application/json',
+				Authorization: `Bearer ${process.env.MODUS_TOKEN}`
 			}
 		}
 	);
@@ -166,7 +169,8 @@ export const getVerificationCodeByCode = async (
 		{ query, variables },
 		{
 			headers: {
-				'Content-Type': 'application/json'
+				'Content-Type': 'application/json',
+				Authorization: `Bearer ${process.env.MODUS_TOKEN}`
 			}
 		}
 	);
@@ -196,7 +200,8 @@ export const getVerificationCodeByEmail = async (
 		{ query, variables },
 		{
 			headers: {
-				'Content-Type': 'application/json'
+				'Content-Type': 'application/json',
+				Authorization: `Bearer ${process.env.MODUS_TOKEN}`
 			}
 		}
 	);
@@ -228,7 +233,8 @@ export const getUserOrganizationsByUserId = async (
 		{ query, variables },
 		{
 			headers: {
-				'Content-Type': 'application/json'
+				'Content-Type': 'application/json',
+				Authorization: `Bearer ${process.env.MODUS_TOKEN}`
 			}
 		}
 	);
@@ -255,7 +261,8 @@ export const getOrganization = async (
 		{ query, variables },
 		{
 			headers: {
-				'Content-Type': 'application/json'
+				'Content-Type': 'application/json',
+				Authorization: `Bearer ${process.env.MODUS_TOKEN}`
 			}
 		}
 	);
@@ -294,7 +301,8 @@ export const getDashboardStats = async (
 		{ query, variables },
 		{
 			headers: {
-				'Content-Type': 'application/json'
+				'Content-Type': 'application/json',
+				Authorization: `Bearer ${process.env.MODUS_TOKEN}`
 			}
 		}
 	);
@@ -324,7 +332,8 @@ export const getFeedbackByFeedbackId = async (
 		{ query, variables },
 		{
 			headers: {
-				'Content-Type': 'application/json'
+				'Content-Type': 'application/json',
+				Authorization: `Bearer ${process.env.MODUS_TOKEN}`
 			}
 		}
 	);
@@ -354,7 +363,8 @@ export const getFeedbackByOrganizationIdAndFeedbackId = async (
 		{ query, variables },
 		{
 			headers: {
-				'Content-Type': 'application/json'
+				'Content-Type': 'application/json',
+				Authorization: `Bearer ${process.env.MODUS_TOKEN}`
 			}
 		}
 	);
@@ -384,7 +394,8 @@ export const getFeedbacksByOrganizationId = async (
 		{ query, variables },
 		{
 			headers: {
-				'Content-Type': 'application/json'
+				'Content-Type': 'application/json',
+				Authorization: `Bearer ${process.env.MODUS_TOKEN}`
 			}
 		}
 	);
@@ -409,7 +420,8 @@ export const getPasswordResetTokenByToken = async (
 		{ query, variables },
 		{
 			headers: {
-				'Content-Type': 'application/json'
+				'Content-Type': 'application/json',
+				Authorization: `Bearer ${process.env.MODUS_TOKEN}`
 			}
 		}
 	);
