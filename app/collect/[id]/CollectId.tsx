@@ -1,6 +1,7 @@
 'use client';
 
 import clsx from 'clsx';
+import axios from 'axios';
 import Link from 'next/link';
 import { FC, useState } from 'react';
 import { toast } from 'react-toastify';
@@ -22,45 +23,36 @@ const CollectId: FC<CollectIdProps> = ({ params, widgetStyle }) => {
 	const [description, setDescription] = useState('');
 	const [isSubmitting, setIsSubmitting] = useState(false);
 	const siteLink = `${process.env.NEXT_PUBLIC_BASE_URL}/?utm_medium=powered_by&utm_source=widget`;
-	
+
 	const handleSendFeedback = async () => {
-		if (rating == 0) {
+		if (rating === 0) {
 			return toast.error('Rate your overall experience!');
 		}
 
-		if (description == '') {
+		if (!description) {
 			return toast.error('Add more details, please!');
 		}
 
 		setIsSubmitting(true);
 
-		fetch('/api/feedback/collect', {
-			method: 'POST',
-			body: JSON.stringify({
+		try {
+			await axios.post('/api/feedback/collect', {
 				rating,
 				description,
 				organizationId: id
-			})
-		})
-			.then((res) => res.json())
-			.then((res) => {
-				setIsSubmitting(false);
-				if (res.success) {
-					setRating(0);
-					setDescription('');
-					toast.success('Thanks for sharing your feedback!');
-					setTimeout(() => {
-						parent.postMessage('firefeed-minimized', '*');
-					}, 1500);
-				} else {
-					toast.error(res.message);
-				}
-			})
-			.catch((err) => {
-				setIsSubmitting(false);
-				console.log(err);
-				toast.error('Failed to send feedback');
 			});
+
+			setRating(0);
+			setDescription('');
+
+			toast.success('Feedback sent successfully!');
+			setTimeout(() => parent.postMessage('firefeed-minimized', '*'), 1500);
+		} catch (error) {
+			console.log('Feedback sending error :>>', error);
+			toast.error('Failed to send feedback ;(');
+		} finally {
+			setIsSubmitting(false);
+		}
 	};
 
 	return (

@@ -2,6 +2,8 @@ import { NextRequest, NextResponse } from 'next/server';
 import { getOrganization } from '#/lib/graphql/queries';
 import { createFeedback } from '#/lib/graphql/mutation';
 
+export const maxDuration = 45;
+
 export const POST = async (req: NextRequest) => {
   const body: {
 		rating: number,

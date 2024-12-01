@@ -2,6 +2,8 @@ import { getToken } from 'next-auth/jwt';
 import { NextRequest, NextResponse } from 'next/server';
 import { getFeedbacksByOrganizationId, getOrganization, getUser } from '#/lib/graphql/queries';
 
+export const maxDuration = 45;
+
 export const GET = async (req: NextRequest) => {
 	const token = await getToken({ req });
 	if (!token) {

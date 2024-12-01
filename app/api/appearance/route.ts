@@ -4,6 +4,8 @@ import { NextRequest, NextResponse } from 'next/server';
 import { getOrganization, getUser } from '#/lib/graphql/queries';
 import { initializeUpdateOrganizationVariables, updateOrganization } from '#/lib/graphql/mutation';
 
+export const maxDuration = 45;
+
 export const PUT = async (req: NextRequest) => {
   const body = await req.json();
 	const token = await getToken({ req });
