@@ -1,4 +1,4 @@
-import { Feedback } from '@prisma/client';
+import { Feedback } from '#/types';
 
 export const getFeedbackHistory = async (): Promise<Feedback[]> => {
 	const response = await fetch('/api/getFeedbackHistory');

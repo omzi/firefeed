@@ -2,7 +2,7 @@
 
 import { JSX, SVGProps, useRef } from 'react';
 import NavBar from '#/components/shared/NavBar';
-import { ArrowDownIcon, BarChartIcon, GoalIcon, HeartIcon, SmileIcon } from 'lucide-react';
+import { ArrowDownIcon, BarChartIcon, LayoutDashboardIcon, ZapIcon, PaletteIcon } from 'lucide-react';
 
 interface HomeProps {
   isAuthenticated: boolean;
@@ -10,24 +10,24 @@ interface HomeProps {
 
 const features = [
   {
-    name: 'Chat-Based Therapist',
-    description: 'Engage in conversations with an AI therapist for support and guidance.',
-    icon: SmileIcon
-  },
-  {
-    name: 'Personalized Affirmations',
-    description: 'Receive AI-generated affirmations that are tailored to your unique personality and emotional needs.',
-    icon: HeartIcon
-  },
-  {
-    name: 'Goal Setting',
-    description: 'Set and track personal mental health goals to foster growth and accountability.',
-    icon: GoalIcon
-  },
-  {
-    name: 'Progress Dashboard',
-    description: 'Visualize your mental health journey with insights from chats, affirmations, and more.',
+    name: 'Feedback Analysis',
+    description: 'Harness AI to automatically analyze customer sentiment and extract actionable insights from feedback.',
     icon: BarChartIcon
+  },
+  {
+    name: 'Customizable Widget',
+    description: 'Easily embed a branded feedback widget on your website or share a direct feedback link with customers.',
+    icon: PaletteIcon
+  },
+  {
+    name: 'Analytics Dashboard',
+    description: 'Track feedback trends, sentiment patterns, and customer satisfaction metrics in real-time.',
+    icon: LayoutDashboardIcon
+  },
+  {
+    name: 'Multi-Channel Collection',
+    description: 'Gather feedback through embedded widgets, direct links, or QR codes - whatever works best for your business.',
+    icon: ZapIcon
   }
 ];
 

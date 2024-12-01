@@ -1,9 +1,8 @@
 import type { Metadata } from 'next';
-import { User } from '@prisma/client';
 import authConfig from '#/auth.config';
-import { AppearanceType, Organization } from '#/types';
 import { Session, getServerSession } from 'next-auth';
 import Appearance from '#/app/(main)/appearance/Appearance';
+import { AppearanceType, Organization, User } from '#/types';
 import { getUser, getUserOrganizationsByUserId } from '#/lib/graphql/queries';
 
 export const metadata: Metadata = {

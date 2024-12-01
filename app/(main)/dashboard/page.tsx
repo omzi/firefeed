@@ -1,5 +1,5 @@
+import { User } from '#/types';
 import type { Metadata } from 'next';
-import { User } from '@prisma/client';
 import authConfig from '#/auth.config';
 import { feedbackTips } from '#/lib/utils';
 import { getServerSession, Session } from 'next-auth';
